@@ -17,12 +17,17 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// NOTE: earliestDeparture won't actually be posted - instead, it's used to calculate the next upcoming departure
+// User-inputted values
 var trainName;
 var destination;
-var earliestDeparture;	// Read the note up there ^
-var nextDeparture;
 var freqMin;
+
+// Variables manipulated with Moment.js
+// NOTE: earliestDepartureTime won't actually be posted - instead, it's used to calculate the next upcoming departure
+var currentTime;
+var earliestDepartureTime;
+var nextDepartureTime;
+var nextArrvMin;
 
 // What happens when a user presses the submit button?
 
@@ -35,8 +40,8 @@ $("#submit-button").on("click", function(event) {
 	trainName = $("#id-train-name").val().trim();
 	destination = $("#id-train-destination").val().trim();
 
-	// Deals with time and minutes -- numbers...
-	earliestDeparture = $("#id-train-firstdep").val().trim();
+	// Deals with time and minutes in numbers...
+	earliestDepartureTime = $("#id-train-firstdep").val().trim();
 	freqMin = $("#id-train-freq").val().trim();
 
 	// Takes data to Firebase to reassign the variables there
@@ -44,16 +49,16 @@ $("#submit-button").on("click", function(event) {
 	database.ref().push({
 		trainName: trainName,
 		destination: destination,
-		earliestDeparture: earliestDeparture,
+		earliestDepartureTime: earliestDepartureTime,
 		freqMin: freqMin
 	})
 
-	database.ref().on("child_added", function(childSnapshot) {
-		trainName = childSnapshot.val().trainName;
-		destination = childSnapshot.val().destination;
-		earliestDeparture = childSnapshot.val().earliestDeparture;
-		freqMin = childSnapshot.val().freqMin;
-	})
+	// database.ref().on('child_added', function(childSnapshot) {
+	// 	trainName = childSnapshot.val().trainName;
+	// 	destination = childSnapshot.val().destination;
+	// 	earliestDepartureTime = childSnapshot.val().earliestDepartureTime;
+	// 	freqMin = childSnapshot.val().freqMin;
+	// })
 
 	// Creates a new table row to hold new train info
 
@@ -67,25 +72,33 @@ $("#submit-button").on("click", function(event) {
 	var tdNxtArrv = $("<td class='tdNxtArrv'>");
 	var tdMinAway = $("<td class='tdMinAway'>");
 
+	// Calculates when the next train will arrive (in both time - tdNxtArrv, AND minutes away - tdMinAway)
+
+	currentTime = moment().format('h:mm:ss a');
+	console.log(currentTime);
+
+	// nextDepartureTime - Calculate how much time is between now and the nextDepartureTime.
+	// Find amount of remaining minutes and subtract from nextDepartureTime
+
+	console.log("nextArrvMin" + nextArrvMin);
+	console.log("nextDepartureTime" + nextDepartureTime);
+	console.log("earliestDepartureTime" + earliestDepartureTime);
+
 	// Appends Firebase information to train table data
 
 	tdName.append(trainName);
 	tdDest.append(destination);
 	tdFreq.append(freqMin);
-	tdNxtArrv.append("x");
-	tdMinAway.append("x");
+	tdNxtArrv.append(nextDepartureTime);
+	tdMinAway.append(nextArrvMin);
+
+	// Appends all the td data to the newTR
 
 	newTR.append(tdName).append(tdDest).append(tdFreq).append(tdNxtArrv).append(tdMinAway);
 
+	// Appends the newTR (with all the table data) to train-table
+
 	$("#train-table").append(newTR);
-
-	
-
-	// Appends train table data to table row
-
-	// $(".")
-
-	// Appends table row to table
 
 })
 
