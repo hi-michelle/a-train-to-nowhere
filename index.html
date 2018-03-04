@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>A Train to Nowhere</title>
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<!-- Michelle's CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Moment.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+</head>
+
+<body>
+
+	<h1>"Well, trains take me so far, but only in my brain.<br>
+	And that's fine with me."</h1>
+
+	<!-- Shows information of upcoming trains -->
+
+	<div id="train-info">
+		<table id="train-table">
+			<tr id="id-info-headers">
+				<td>Train Name</td>
+				<td>Destination</td>
+				<td>Frequency (min)</td>
+				<td>Next Arrival</td>
+				<td>Minutes Away</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Allows user to input info of their desired train -->
+
+	<h3>Add my train</h3>
+
+	<div id="train-input">
+		<form>
+			<div>
+			Train Name<input type="text" id="id-train-name">
+			</div>
+			<div>
+			Destination<input type="text" id="id-train-destination">
+			</div>
+			<div>
+			First Departure (HH:mm)<input type="time" id="id-train-firstdep">
+			</div>
+			<div>
+			Frequency (min)<input type="number" id="id-train-freq">
+			</div>
+			<input type="submit" value="Hail my next train." id="submit-button">
+		</form>
+	</div>
+
+	<script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
