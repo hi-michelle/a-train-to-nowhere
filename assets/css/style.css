@@ -1,3 +1,31 @@
+#div-image1 {
+	position: relative;
+	width: 100%;
+	background-color: #000;
+}
+
+#image1 {
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	background-position: top top;
+	background-attachment: fixed;
+}
+
+#div-h1 {
+	position: absolute;
+	width: 100%;
+	top: 15%;
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+	font-family: 'Sumana', 'Elephant', 'Times', sans-serif;
+	font-size: 2em;
+	color: #fff;
+	float: left;
+}
+
 .trTrainInfo {
-	background-color: red;
 }
