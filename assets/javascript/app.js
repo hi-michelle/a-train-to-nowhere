@@ -41,12 +41,7 @@ $("#submit-button").on("click", function(event) {
 	destination = $("#id-train-destination").val().trim();
 
 	// Deals with time and minutes in numbers...
-	// earliestDepartureTime = $("#id-train-firstdep").val().trim();
-
-	earliestDepartureTime = $("#id-train-firstdep").val();
-
-	console.log("earliestDepartureTime" + earliestDepartureTime);
-
+	earliestDepartureTime = $("#id-train-firstdep").val().trim();
 	freqMin = $("#id-train-freq").val().trim();
 
 	// Takes data to Firebase to reassign the variables there
@@ -79,27 +74,9 @@ $("#submit-button").on("click", function(event) {
 
 	// Calculates when the next train will arrive (in both time - tdNxtArrv, AND minutes away - tdMinAway)
 
-	// currentTime = moment().format('h:mm:ss a');
-	// nextDepartureTime = moment().endOf(nextArrvMin).fromNow(earliestDepartureTime); 
-	nextArrvMin = moment().startOf(earliestDepartureTime).fromNow();
-	console.log("nextarrvmin is " + nextArrvMin);
-	var
-
-	// var momentTime = moment(earliestDepartureTime, 'HH:mm:ss');
-	// console.log('momentTime' + momentTime);
-
-
-
 	// nextDepartureTime - Calculate how much time is between now and the nextDepartureTime.
 
-	// var startTime = moment.calendar();
-
-	// nextDepartureTime = 
 	// Find amount of remaining minutes and subtract from nextDepartureTime
-
-	console.log("nextArrvMin" + nextArrvMin);
-	console.log("nextDepartureTime" + nextDepartureTime);
-	console.log("earliestDepartureTime" + earliestDepartureTime);
 
 	// Appends Firebase information to train table data
 
@@ -122,13 +99,13 @@ $("#submit-button").on("click", function(event) {
 // Fancy JS stuff related to CSS
 
 
-$(window).scroll(function () {
-    var scrollTop = $(window).scrollTop();
-    var height = $(window).height();
+// $(window).scroll(function () {
+//     var scrollTop = $(window).scrollTop();
+//     var height = $(window).height();
 
-    $('#image1').css({
-        'opacity': ((height - scrollTop) / height)
-    }); 
-});
+//     $('#image1').css({
+//         'opacity': ((height - scrollTop) / height)
+//     }); 
+// });
 
 });
