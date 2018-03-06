@@ -18,24 +18,51 @@
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 </head>
 
+
 <body>
 
-<!-- 	<div id="div-image1">
 
-		<div id="div-h1">
-			<h1>"Trains take me so far, but only in my brain.<br>
+
+	<div id="image1">
+		<h1>"Trains take me so far, but only in my brain.<br>
 			And that's fine with me."</h1>
+		<a href="#">
+			<div id="arrow-div"></div>
+		</a>
+
+	</div>
+
+	<div id="entire-background">
+
+	<h2>current time is:</h2>
+		<div id="current-time"></div>
+
+		<div id="train-div">
+
+		<!-- Allows user to input info of their desired train -->
+
+		<div id="train-input">
+
+			<form class="form">
+				<h3>Add my train</h3>
+				<div>
+				Train Name<br><input type="text" id="id-train-name">
+				</div>
+				<div>
+				Destination<br><input type="text" id="id-train-destination">
+				</div>
+				<div>
+				First Train<br><input type="time" id="id-train-firstdep">
+				</div>
+				<div>
+				Frequency (min)<br><input type="number" id="id-train-freq">
+				</div>
+				<input type="submit" value="Hail my next train." id="submit-button">
+			</form>
+	
 		</div>
 
-		<img src="assets/images/train.png" alt="" id="image1">
-
-	</div> -->
-
 	<!-- Shows information of upcoming trains -->
-
-	current time is: <div id="current-time"></div>
-
-	<div id="id-entire-background">
 
 		<div id="train-info">
 			<table id="train-table">
@@ -49,30 +76,11 @@
 			</table>
 		</div>
 
-		<!-- Allows user to input info of their desired train -->
-
-		<h3>Add my train</h3>
-
-		<div id="train-input">
-			<form>
-				<div>
-				Train Name<input type="text" id="id-train-name">
-				</div>
-				<div>
-				Destination<input type="text" id="id-train-destination">
-				</div>
-				<div>
-				First Train (HH:mm) - military time<input type="time" id="id-train-firstdep">
-				</div>
-				<div>
-				Frequency (min)<input type="number" id="id-train-freq">
-				</div>
-				<input type="submit" value="Hail my next train." id="submit-button">
-			</form>
-		</div>
+	</div>
 
 	</div>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 	<script src="assets/javascript/app.js"></script>
 

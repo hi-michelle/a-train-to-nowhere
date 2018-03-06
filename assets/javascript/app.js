@@ -125,7 +125,7 @@ $("#submit-button").on("click", function(event) {
 	tdName.append(trainName);
 	tdDest.append(destination);
 	tdFreq.append(freqMin);
-	tdNxtArrv.append(moment(nextDepartureTime).format("hh:mm"));
+	tdNxtArrv.append(moment(nextDepartureTime).format("MMMM Do YYYY, h:mm:ss a"));
 	tdMinAway.append(minUntilTrain);
 
 	// Appends all the td data to the newTR
@@ -143,13 +143,13 @@ $("#submit-button").on("click", function(event) {
 // Fancy JS stuff related to CSS
 
 
-// $(window).scroll(function () {
-//     var scrollTop = $(window).scrollTop();
-//     var height = $(window).height();
+$(window).scroll(function () {
+    var scrollTop = $(window).scrollTop();
+    var height = $(window).height();
 
-//     $('#image1').css({
-//         'opacity': ((height - scrollTop) / height)
-//     }); 
-// });
+    $('#image1').css({
+        'opacity': ((height - scrollTop) / height)
+    }); 
+});
 
 });
