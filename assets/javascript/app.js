@@ -29,6 +29,12 @@ var earliestDepartureTime;
 var nextDepartureTime;
 var nextArrvMin;
 
+var timeNow;
+
+timeNow = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+$("#current-time").html(timeNow);
+
 // What happens when a user presses the submit button?
 
 $("#submit-button").on("click", function(event) {
@@ -74,6 +80,42 @@ $("#submit-button").on("click", function(event) {
 
 	// Calculates when the next train will arrive (in both time - tdNxtArrv, AND minutes away - tdMinAway)
 
+	var earliestDeptrConverted;
+
+	console.log(earliestDepartureTime);
+
+
+	// First train leaves at earliestDepartureTime
+	// Next arrival time is nextArrvMin
+	// Current time is currentTime
+
+	// Convert earliestDepartureTime to Hours:minutes format, and subtract 1 year in order to get earliestDeptConverted (going back in time to get an actual clock format!)
+	earliestDeptrConverted = moment(earliestDepartureTime, "HH:mm").subtract(1, "years");
+	console.log(earliestDeptrConverted);
+
+	// Get current time
+	currentTime = moment();
+
+	// Get the difference between the currentTime and earliestDeptrConverted
+	var diffTime = moment().diff(moment(earliestDeptrConverted), "minutes");
+
+	console.log("DIFFERENCE IN TIME: " + diffTime);
+
+	// Figures out the minutes apart
+
+	var remainingTime = diffTime % freqMin;
+	console.log("remainingTime" + remainingTime);
+
+	// Calculate the remaining time between the freqMin and the remainingTime
+
+	var minUntilTrain = freqMin - remainingTime;
+	console.log(minUntilTrain + "minUntilTrain");
+
+	// Get nextDepartureTime by adding remaining time to currentTime (moment())
+	// Convert nextDepartureTime to actual time using moment() and formatting properly with hh:mm
+	nextDepartureTime = moment().add(minUntilTrain, "minutes");
+	console.log(moment(nextDepartureTime).format("hh:mm"));
+
 	// nextDepartureTime - Calculate how much time is between now and the nextDepartureTime.
 
 	// Find amount of remaining minutes and subtract from nextDepartureTime
@@ -83,8 +125,8 @@ $("#submit-button").on("click", function(event) {
 	tdName.append(trainName);
 	tdDest.append(destination);
 	tdFreq.append(freqMin);
-	tdNxtArrv.append(nextDepartureTime);
-	tdMinAway.append(nextArrvMin);
+	tdNxtArrv.append(moment(nextDepartureTime).format("hh:mm"));
+	tdMinAway.append(minUntilTrain);
 
 	// Appends all the td data to the newTR
 
@@ -94,7 +136,9 @@ $("#submit-button").on("click", function(event) {
 
 	$("#train-table").append(newTR);
 
-})
+
+
+});
 
 // Fancy JS stuff related to CSS
 
