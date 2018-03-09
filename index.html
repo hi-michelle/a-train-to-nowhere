@@ -9,7 +9,7 @@
 	<!-- Michelle's CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Sumana" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Padauk|Sumana" rel="stylesheet"> 
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- Moment.js -->
@@ -18,71 +18,74 @@
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 </head>
 
-
 <body>
-
-
 
 	<div id="image1">
 		<h1>"Trains take me so far, but only in my brain.<br>
 			And that's fine with me."</h1>
-		<a href="#">
-			<div id="arrow-div"></div>
-		</a>
-
+		<a href="#"><div id="arrow-div"></div></a>
 	</div>
 
 	<div id="entire-background">
 
-	<h2>current time is:</h2>
-		<div id="current-time"></div>
+		<div id="pocket-watch">
+
+		<h2>current time is:</h2>
+			<div id="current-time"></div>
 
 		<div id="train-div">
 
-		<!-- Allows user to input info of their desired train -->
+			<!-- Allows user to input info of their desired train -->
 
-		<div id="train-input">
+			<div id="train-input">
+				<form class="form">
+					<h3>Add my train</h3>
+					<div>
+						<h4>Train Name</h4>
+						<input type="text" id="id-train-name">
+					</div>
+					<div>
+						<h4>Destination</h4>
+						<input type="text" id="id-train-destination">
+					</div>
+					<div>
+						<h4>First Train</h4>
+						<input type="time" id="id-train-firstdep">
+					</div>
+					<div>
+						<h4>Frequency (min)</h4>
+						<input type="number" id="id-train-freq">
+					</div>
+					<input type="submit" value="Hail my next train." id="submit-button">
+				</form>
+			</div>
 
-			<form class="form">
-				<h3>Add my train</h3>
-				<div>
-				Train Name<br><input type="text" id="id-train-name">
-				</div>
-				<div>
-				Destination<br><input type="text" id="id-train-destination">
-				</div>
-				<div>
-				First Train<br><input type="time" id="id-train-firstdep">
-				</div>
-				<div>
-				Frequency (min)<br><input type="number" id="id-train-freq">
-				</div>
-				<input type="submit" value="Hail my next train." id="submit-button">
-			</form>
-	
+		<!-- Shows information of upcoming trains -->
+
+			<div id="train-info">
+				<table id="train-table">
+					<tr id="id-info-headers">
+						<td>Train Name</td>
+						<td>Destination</td>
+						<td>Frequency</td>
+						<td>Next Arrival</td>
+						<td>Minutes Away</td>
+					</tr>
+				</table>
+			</div>
+
+		<!-- Ends train-div -->
 		</div>
 
-	<!-- Shows information of upcoming trains -->
-
-		<div id="train-info">
-			<table id="train-table">
-				<tr id="id-info-headers">
-					<td>Train Name</td>
-					<td>Destination</td>
-					<td>Frequency (min)</td>
-					<td>Next Arrival</td>
-					<td>Minutes Away</td>
-				</tr>
-			</table>
+		<!-- Ends pocket-watch div -->
 		</div>
 
+	<!-- Ends entire-background -->
 	</div>
 
-	</div>
+<!-- JavaScript -->
 
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-	<script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/app.js"></script>
 
 </body>
 

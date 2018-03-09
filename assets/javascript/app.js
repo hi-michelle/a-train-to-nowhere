@@ -33,7 +33,7 @@ var timeNow;
 
 timeNow = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-$("#current-time").html(timeNow);
+$("#current-time").text(timeNow);
 
 // What happens when a user presses the submit button?
 
@@ -135,8 +135,6 @@ $("#submit-button").on("click", function(event) {
 	// Appends the newTR (with all the table data) to train-table
 
 	$("#train-table").append(newTR);
-
-
 
 });
 

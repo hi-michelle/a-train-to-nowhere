@@ -1,6 +1,8 @@
 body {
-	background-color: #000;
+	background-color: #171B1E;
 }
+
+/* Landing image */
 
 #image1 {
 	background-image: url('../images/train2.png');
@@ -15,7 +17,7 @@ body {
 h1 {
 	width: 100%;
 	text-align: center;
-	font-family: 'Sumana', 'Elephant', 'Times', sans-serif;
+	font-family: 'Sumana', 'Elephant', 'Times', serif;
 	font-size: 36px;
 	color: #fff;
 	position: absolute;
@@ -24,108 +26,140 @@ h1 {
 }
 
 /* I resisted the urge to smash my keyboard to pieces */
+
 #arrow-div {
 	background-image: url('../images/arrow.png');
-	background-size: 100%;
 	background-repeat: no-repeat;
+	background-size: 100%;
+
+	height: 80px;
 	width: 80px;
-/*		background-color: red;
-*/	height: 80px;
-	position: relative;
 	margin: 0 auto;
+
+	position: relative;
 	top: 80%;
 }
-/*
-#arrow-img {
-	width: 100%;
-}
-*/
+
+/* Background below landing image */
+
 #entire-background {
 	background-color: #171B1E;
+	box-sizing: border-box;
 	height: 100vh;
 }
 
+/* Current time */
 
 h2 {
 	color: #fff;
-	text-align: center;
+	font-family: 'Padauk', sans-serif;
+	font-size: 22px;
+	letter-spacing: 0.05em;
 	padding: 30px 0;
+	text-align: center;
 }
 
 #current-time {
-	color: #C1E7FF;
-	font-family: 'Arial', sans-serif;
-	font-size: 56px;
 	clear: both;
+	color: #C1E7FF;
+	font-family: 'Sumana', 'Elephant', 'Times', serif;
+	font-size: 56px;
+	padding-bottom: 30px;
 	text-align: center;
 	width: 100%;
-	padding-bottom: 30px;
 }
+
+/* Train scheduling system */
 
 #train-div {
 	width: 80%;
 	margin: 0 auto;
 }
 
+/* User input form */
+
+#train-input {
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	width: 30%;
+}
+
+.form {
+	font-family: 'Padauk', sans-serif;
+}
+
 h3 {
+	color: #fff;
+	font-family: 'Padauk', sans-serif;
 	font-size: 26px;
+  letter-spacing: 0.05em;	
 	margin: 10px 0;
+	text-align: center;
 }
 
 #id-train-name,
 #id-train-destination,
-
 #submit-button {
 	margin: 10px 0;
 	width: 60%;
-
 }
 
 #id-train-firstdep,
 #id-train-freq {
 	width: 30%;
+	margin: 10px 0;
 }
 
-/*h4 {
-	display: inline;
-	float:;
+h4 {
+		color: #FCD0A1;
+
+  font-family: 'Frank Ruhl Libre', serif;
 }
-*/
+
+/* Train table generator */
 
 #train-info {
+	box-sizing: border-box;
+	float: left;
 	margin: 0 auto;
+	width: 70%;
 }
 
 #train-table {
 	padding: 0 60px;
 	text-align: center;
+}
 
+#id-info-headers {
+	font-family: 'Padauk', sans-serif;
+	font-size: 16px;
+	letter-spacing: 0.05em;
+	margin: 0 auto;
+	width: 100%;
+}
+
+tr {
+  font-family: 'Frank Ruhl Libre', serif;
+  width: 100%;
 }
 
 td {
+	box-sizing: border-box;
 	color: #fff;
-	padding: 10px 15px;
-
-
+	padding: 12px 5px;
+	text-align: center;
+	width: 15%;
 }
 
+/* Pocket watch background */
 
-#train-input {
-	width: 30%;
-	float: left;
-	box-sizing: border-box;
-	background-color: #fff;
+#pocket-watch {
+	background-image: url('../images/time3.png');
+	background-attachment: fixed;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
 }
-
-.form {
-/*	padding-left: 30%;*/
-}
-
-#train-info {
-	margin: 0 auto;
-	background-color: red;
-	float: left;
-	box-sizing: border-box;
-	width: 70%;
-}
-
